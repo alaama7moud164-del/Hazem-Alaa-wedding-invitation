@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazem & Alaa — Wedding Invitation</title>
+    
+    <!-- Open Graph / Social Media Preview Tags -->
+    <meta property="og:title" content="Hazem & Alaa — Wedding Invitation">
+    <meta property="og:description" content="You are cordially invited to celebrate the wedding of Hazem & Alaa — Saturday, October 31, 2026.">
+    <meta property="og:url" content="https://alaama7moud164-del.github.io/Hazem-Alaa-wedding-invitation/">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond, Amiri, Great Vibes, Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wedding: {
+                            bg: '#F0F5FA',
+                            card: '#FFFFFF',
+                            sky: '#E2EEF8',
+                            blue: '#B5D2EC',
+                            navy: '#2A3C4E',
+                            silver: '#C5D1DF',
+                            gold: '#D4AF37',
+                            text: '#2C3E50',
+                            muted: '#6A7D90'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        arabic: ['"Amiri"', 'serif'],
+                        script: ['"Great Vibes"', 'cursive'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #1E2832;
+            color: #2C3E50;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Background Floral Garden Image with Dreamy Baby Blue Soft Overlay */
+        .floral-bg-wrapper {
+            position: fixed;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        .floral-overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(240, 245, 250, 0.90) 0%, rgba(226, 238, 248, 0.85) 50%, rgba(181, 210, 236, 0.82) 100%);
+            backdrop-filter: blur(5px);
+            z-index: -1;
+        }
+
+        /* Soft romantic baby blue glow */
+        .glow-wedding {
+            text-shadow: 0 0 25px rgba(181, 210, 236, 0.8);
+        }
+
+        /* Floating Petals / Sparkles animation */
+        .petal {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(181, 210, 236, 0.6) 100%);
+            border-radius: 50% 20% 50% 50%;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: driftPetal linear infinite;
+        }
+
+        @keyframes driftPetal {
+            0% {
+                transform: translateY(0px) rotate(0deg) scale(0.7);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.8;
+            }
+            80% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-240px) rotate(360deg) scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        /* Custom frosted glass card styling with silver/champagne gold accents */
+        .invitation-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(197, 209, 223, 0.7);
+            box-shadow: 0 20px 45px -15px rgba(42, 60, 78, 0.15);
+            border-radius: 2.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .invitation-card:hover {
+            box-shadow: 0 25px 55px -12px rgba(42, 60, 78, 0.25);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(240, 245, 250, 0.5);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B5D2EC;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative selection:bg-wedding-blue selection:text-wedding-navy py-12 px-4 sm:px-6">
+
+    <div class="floral-bg-wrapper"></div>
+    <div class="floral-overlay"></div>
+
+    <!-- Floating Petals Container -->
+    <div id="petal-container" class="fixed inset-0 pointer-events-none z-30 overflow-hidden"></div>
+
+    <!-- Main Container wrapping all cards -->
+    <main class="max-w-2xl mx-auto space-y-8 relative z-10">
+
+        <!-- Card 1: Quranic Verse Card -->
+        <section class="invitation-card p-8 sm:p-12 text-center relative overflow-hidden">
+            <div class="absolute -right-16 -top-16 w-40 h-40 bg-wedding-sky rounded-full blur-2xl pointer-events-none"></div>
+            <div class="absolute -left-16 -bottom-16 w-40 h-40 bg-wedding-blue/30 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <div class="space-y-4 relative z-10">
+                <p class="font-arabic text-xl sm:text-2xl text-wedding-navy font-semibold tracking-wide">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </p>
+                <div class="w-12 h-0.5 bg-wedding-blue mx-auto my-3"></div>
+                <p class="font-arabic text-2xl sm:text-3xl md:text-4xl text-wedding-navy leading-loose font-normal glow-wedding" dir="rtl">
+                    "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
+                </p>
+                <p class="text-[11px] tracking-[0.3em] text-wedding-muted font-light pt-2 font-arabic" dir="rtl">سورة الروم: ٢١</p>
+            </div>
+        </section>
+
+        <!-- Card 2: Couple Names & Intro Card -->
+        <section class="invitation-card p-10 sm:p-16 text-center relative overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-wedding-sky/60 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="space-y-6 relative z-10">
+                <span class="text-[11px] tracking-[0.5em] text-wedding-muted uppercase font-light inline-block">
+                    With joyful hearts and our families by our side
+                </span>
+                
+                <h1 class="font-script text-7xl sm:text-9xl text-wedding-navy py-2 drop-shadow-sm">
+                    Hazem & Alaa
+                </h1>
+                <span class="text-[11px] tracking-[0.5em] text-wedding-muted uppercase font-light inline-block">
+                    Request the honour of your presence at our wedding ceremony.
+                </span>
+                <p class="font-serif italic text-lg sm:text-2xl text-wedding-navy font-light max-w-md mx-auto leading-relaxed">
+                    "We found our true beginning when we realized that our favorite place in the world is right next to each other."
+                </p>
+
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-light text-wedding-navy tracking-widest border-t border-wedding-silver/40 pt-6">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-regular fa-calendar text-wedding-blue"></i>
+                        <span>October 31, 2026</span>
+                    </div>
+                    <span class="hidden sm:inline text-wedding-silver">•</span>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-regular fa-clock text-wedding-blue"></i>
+                        <span>3:00 PM – 6:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card 3: Live Countdown Timer Card -->
+        <section class="invitation-card p-8 sm:p-12 text-center relative overflow-hidden">
+            <div class="space-y-8 relative z-10">
+                <div class="space-y-2">
+<!--                    <span class="text-[10px] uppercase tracking-[0.4em] text-wedding-muted font-light">The Waiting Moment</span>-->
+                    <h2 class="font-serif text-2xl sm:text-3xl text-wedding-navy font-light italic">Counting down to our forever</h2>
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="bg-white/90 border border-wedding-silver/60 p-5 rounded-2xl shadow-sm">
+                        <span id="days" class="font-serif text-3xl sm:text-5xl text-wedding-navy font-light block mb-1">00</span>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-wedding-muted font-light">Days</span>
+                    </div>
+                    <div class="bg-white/90 border border-wedding-silver/60 p-5 rounded-2xl shadow-sm">
+                        <span id="hours" class="font-serif text-3xl sm:text-5xl text-wedding-navy font-light block mb-1">00</span>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-wedding-muted font-light">Hours</span>
+                    </div>
+                    <div class="bg-white/90 border border-wedding-silver/60 p-5 rounded-2xl shadow-sm">
+                        <span id="minutes" class="font-serif text-3xl sm:text-5xl text-wedding-navy font-light block mb-1">00</span>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-wedding-muted font-light">Minutes</span>
+                    </div>
+                    <div class="bg-white/90 border border-wedding-silver/60 p-5 rounded-2xl shadow-sm">
+                        <span id="seconds" class="font-serif text-3xl sm:text-5xl text-wedding-navy font-light block mb-1">00</span>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-wedding-muted font-light">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card 4: Location & Interactive Map Card -->
+        <section class="invitation-card p-8 sm:p-12 text-center relative overflow-hidden">
+            <div class="absolute -left-20 -top-20 w-48 h-48 bg-wedding-sky rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="space-y-6 relative z-10">
+                <div class="space-y-2">
+                    <span class="text-[10px] uppercase tracking-[0.4em] text-wedding-muted font-light">Where We Gather</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl text-wedding-navy font-light italic">Dream Gardens - Talia</h2>
+                </div>
+
+                <div class="space-y-3 py-2">
+                    <p class="text-base sm:text-lg font-serif text-wedding-navy font-medium">Maadi Corniche, Cairo</p>
+                    <p class="text-xs sm:text-sm text-wedding-muted font-light max-w-md mx-auto leading-relaxed">
+                        Next to Royal Plaza and Maadi Armed Forces Club
+                    </p>
+                </div>
+
+                <div class="pt-2">
+                    <a href="https://maps.app.goo.gl/6B1PYKDMETcZWoQX6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-wedding-navy hover:bg-[#1C2833] text-white text-xs uppercase tracking-[0.2em] font-medium transition-all duration-500 shadow-lg group">
+                        <i class="fa-solid fa-map-location-dot group-hover:scale-110 transition-transform text-wedding-blue"></i>
+                        <span>Open Google Maps</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Card -->
+        <footer class="text-center py-6 space-y-2">
+            <h3 class="font-script text-3xl text-white drop-shadow-md">Hazem & Alaa</h3>
+            <p class="text-[10px] uppercase tracking-[0.4em] text-white/90 font-light drop-shadow-sm">October 31, 2026 • Cairo</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // Floating Petals Generator
+        function createPetals() {
+            const container = document.getElementById('petal-container');
+            const count = 25;
+            for (let i = 0; i < count; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                const size = Math.random() * 10 + 6;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size * 1.5}px`;
+                petal.style.left = `${Math.random() * 100}vw`;
+                petal.style.top = `${Math.random() * 100}vh`;
+                petal.style.animationDuration = `${Math.random() * 9 + 6}s`;
+                petal.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(petal);
+            }
+        }
+        createPetals();
+
+        // Countdown Timer Logic
+        const weddingDate = new Date('October 31, 2026 15:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
